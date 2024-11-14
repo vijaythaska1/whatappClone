@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { MoreVertical, Search, MessageSquare, Archive, Users, Sun } from 'lucide-react';
 import ChatList from '../page/ChatList';
-import { Link } from 'react-router-dom';
+
 
 export default function Sidebar() {
   const [searchQuery, setSearchQuery] = useState('');

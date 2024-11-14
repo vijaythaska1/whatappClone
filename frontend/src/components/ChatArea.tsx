@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { Video, Phone, Search, MoreVertical } from 'lucide-react';
 import MessageList from '../page/MessageList'
 import MessageInput from '../page/MessageInput'

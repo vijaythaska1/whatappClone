@@ -1,4 +1,3 @@
-import React from 'react';
 import { Camera, Phone, MessageCircle, Bell, Blocks, ThumbsDown, Trash } from 'lucide-react';
 
 const Profile = () => {
