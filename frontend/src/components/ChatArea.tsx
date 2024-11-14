@@ -1,16 +1,25 @@
 import { useState } from 'react';
 import { Video, Phone, Search, MoreVertical } from 'lucide-react';
 import MessageList from '../page/MessageList'
-import MessageInput from '../page/MessageInput'
-import { Link } from 'react-router-dom';
+import MessageInput from './MessageInput'
+import { useNavigate } from 'react-router-dom';
 export default function ChatArea() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
+  console.log("🚀 ~ ChatArea ~ isProfileOpen:", isProfileOpen)
+  const navegate = useNavigate()
+  const OpenProfile = () => {
+    setIsProfileOpen(true)
+    navegate("/profile")
+  }
   return (
     <div className="flex-1 flex flex-col h-full bg-white dark:bg-gray-900">
+      {!isProfileOpen && (
+        <>
       {/* Chat Header */}
       <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
-        <Link to={"/profile"}>
+        <button onClick={OpenProfile}>
+          
           <div className="flex items-center space-x-4">
             <div className="relative">
               <img
@@ -25,7 +34,7 @@ export default function ChatArea() {
               <span className="text-sm text-gray-500 dark:text-gray-400">Online</span>
             </div>
           </div>
-        </Link>
+        </button>
 
         <div className="flex items-center space-x-1">
           <button
@@ -82,16 +91,19 @@ export default function ChatArea() {
           </div>
         </div>
       </div>
+      
+        
+          {/* Messages Area */}
+          <div className="flex-1 overflow-y-auto">
+            <MessageList />
+          </div>
 
-      {/* Messages Area */}
-      <div className="flex-1 overflow-y-auto">
-        <MessageList />
-      </div>
-
-      {/* Input Area */}
-      <div className="border-t border-gray-200 dark:border-gray-700">
-        <MessageInput />
-      </div>
-    </div>
+          {/* Input Area */}
+          <div className="border-t border-gray-200 dark:border-gray-700">
+            <MessageInput />
+          </div>
+        </>
+      )}
+    </div >
   );
 }
