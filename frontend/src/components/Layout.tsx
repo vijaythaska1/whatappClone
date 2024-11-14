@@ -1,6 +1,6 @@
 import React from 'react'
 import Sidebar from './Sidebar';
-import ChatArea from '../page/ChatArea';
+import ChatArea from './ChatArea';
 
 function Layout() {
   return (
