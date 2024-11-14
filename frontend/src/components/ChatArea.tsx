@@ -1,4 +1,4 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 import { Video, Phone, Search, MoreVertical } from 'lucide-react';
 import MessageList from '../page/MessageList'
 import MessageInput from '../page/MessageInput'
@@ -10,21 +10,21 @@ export default function ChatArea() {
     <div className="flex-1 flex flex-col h-full bg-white dark:bg-gray-900">
       {/* Chat Header */}
       <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
-      <Link to={"/profile"}>
-        <div className="flex items-center space-x-4">
-          <div className="relative">
-            <img
-              src="/api/placeholder/40/40"
-              alt="Chat Avatar"
-              className="w-10 h-10 rounded-full object-cover ring-2 ring-blue-100 dark:ring-blue-900"
-            />
-            <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-white dark:border-gray-900" />
-          </div>
-          <div className="flex flex-col">
+        <Link to={"/profile"}>
+          <div className="flex items-center space-x-4">
+            <div className="relative">
+              <img
+                src="/api/placeholder/40/40"
+                alt="Chat Avatar"
+                className="w-10 h-10 rounded-full object-cover ring-2 ring-blue-100 dark:ring-blue-900"
+              />
+              <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-white dark:border-gray-900" />
+            </div>
+            <div className="flex flex-col">
               <span className="font-semibold text-gray-900 dark:text-gray-100">Chat Name</span>
               <span className="text-sm text-gray-500 dark:text-gray-400">Online</span>
+            </div>
           </div>
-        </div>
         </Link>
 
         <div className="flex items-center space-x-1">
