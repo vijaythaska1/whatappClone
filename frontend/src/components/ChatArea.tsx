@@ -3,23 +3,15 @@ import { Video, Phone, Search, MoreVertical } from 'lucide-react';
 import MessageList from '../page/MessageList'
 import MessageInput from './MessageInput'
 import { useNavigate } from 'react-router-dom';
+
 export default function ChatArea() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isProfileOpen, setIsProfileOpen] = useState(false);
-  console.log("🚀 ~ ChatArea ~ isProfileOpen:", isProfileOpen)
-  const navegate = useNavigate()
-  const OpenProfile = () => {
-    setIsProfileOpen(true)
-    navegate("/profile")
-  }
+const navegate = useNavigate()
   return (
     <div className="flex-1 flex flex-col h-full bg-white dark:bg-gray-900">
-      {!isProfileOpen && (
-        <>
       {/* Chat Header */}
       <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
-        <button onClick={OpenProfile}>
-          
+        <button onClick={()=>navegate("/FriendProfile")} >
           <div className="flex items-center space-x-4">
             <div className="relative">
               <img
@@ -91,19 +83,15 @@ export default function ChatArea() {
           </div>
         </div>
       </div>
-      
-        
-          {/* Messages Area */}
-          <div className="flex-1 overflow-y-auto">
-            <MessageList />
-          </div>
-
-          {/* Input Area */}
-          <div className="border-t border-gray-200 dark:border-gray-700">
-            <MessageInput />
-          </div>
-        </>
-      )}
+      {/* Messages Area */}
+      <div className="flex-1 overflow-y-auto">
+        <MessageList />
+      </div>
+      {/* Input Area */}
+      <div className="border-t border-gray-200 dark:border-gray-700">
+        <MessageInput />
+      </div>
     </div >
+
   );
 }

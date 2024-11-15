@@ -1,6 +1,7 @@
 import  { useState } from 'react';
 import { MoreVertical, Search, MessageSquare, Archive, Users, Sun } from 'lucide-react';
 import ChatList from '../page/ChatList';
+import { Link } from 'react-router-dom';
 
 
 export default function Sidebar() {
@@ -10,10 +11,12 @@ export default function Sidebar() {
     <div className="w-[30%] max-w-[420px] bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800 flex flex-col h-screen">
       {/* User Profile */}
       <div className="flex items-center justify-between p-3 bg-emerald-600 dark:bg-emerald-700">
+        <Link to={"/profile"}>
         <div className="flex items-center space-x-3">
           <img src="/placeholder.svg?height=40&width=40" alt="User Avatar" className="w-10 h-10 rounded-full object-cover" />
           <span className="font-semibold text-white">John Doe</span>
         </div>
+        </Link>
         <div className="flex space-x-3">
           <button aria-label="Communities" className="text-white hover:bg-emerald-700 dark:hover:bg-emerald-800 p-2 rounded-full transition-colors duration-200">
             <Users className="w-5 h-5" />
